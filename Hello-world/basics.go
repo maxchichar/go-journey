@@ -7,5 +7,6 @@ import (
 func main() {
 	var age int = 21
 	var name string = "Maxwell Chibueze Charles"
-	fmt.Println(name, age)
+	fmt.Println(name)
+	fmt.Println(age)
 }

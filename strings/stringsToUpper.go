@@ -103,18 +103,40 @@ THIS problem is REALLY IMPORTANT
 
 package main
 
-import(
+import (
 	"fmt"
 	"strings"
 )
 
-func upperTrans(sentence string) string{
-	if len(sentence) <= 4 {
-		return strings.ToUpper(sentence)
+func TransformSentence(sentence string) string {
+	result, word := "", ""
+
+	for i := 0; i < len(sentence); i++ {
+		ch := sentence[i]
+		if ch != ' ' {
+			word += string(ch)
+		} else {
+			// Apply custom rule
+			if len(word) == 4 || len(word) > 4 {
+				word = strings.ToUpper(word)
+			}
+			result += word + " "
+			word = ""
+		}
 	}
-	return sentence
+
+	// last word
+	if len(word) == 4 || len(word) > 5 {
+		word = strings.ToUpper(word)
+	}
+
+	result += word
+
+	return result
 }
 
-func main()  {
-	fmt.Println(upperTrans("this problem is really important"))
+func main() {
+	fmt.Println(TransformSentence("this problem is really important"))
 }
+
+// debug the code above to provide the right output

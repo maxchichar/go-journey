@@ -2,10 +2,6 @@
 //capitalise
 //delete ask the user the index to delete and delete it. if the user put five delete the word at index 5, if index is 10 and the user input 25 it should tell the user that the index is out of range try again by restarting the program
 
-//last word
-//capitalise
-//delete ask the user the index to delete and delete it. if the user put five delete the word at index 5, if index is 10 and the user input 25 it should tell the user that the index is out of range try again by restarting the program
-
 package main
 
 import (
@@ -19,6 +15,10 @@ var word string
 
 func indexApp(word string) string {	
 	fmt.Println("Welcome To My Index App")
+	fmt.Println()
+	time.Sleep(1 * time.Second)
+	
+	fmt.Println("Loading...") 
 	time.Sleep(3 * time.Second)
 	fmt.Println()
 	fmt.Println()
@@ -56,7 +56,7 @@ func indexApp(word string) string {
 		for {
 			if deleteUserIndex >= lWord || deleteUserIndex < 0 {
 				fmt.Printf("Index out of range!, input the an index within the range of %v: ", lWord)
-				fmt.Scanln(&word)
+				fmt.Scanln(&deleteUserIndex)
 				continue
 			}
 			break
